@@ -20,6 +20,7 @@ proxy-login: proxyd ##@ Proxy login
 proxy-run: ## Starts proxy client
 ifneq ($(proxyd_exists), false)
 	docker exec -d ${container_name} bash proxy_auth.sh
+	@echo "Proxy started"
 else
 	@echo "Please start the proxy by running:\n" \
 		"make proxy-login" 
